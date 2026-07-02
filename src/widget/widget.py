@@ -14,3 +14,4 @@ def mask_account_card(info: str) -> str:
 
 def get_date(date_str: str) -> str:
     return f"{date_str[8:10]}.{date_str[5:7]}.{date_str[:4]}"
+# final version
