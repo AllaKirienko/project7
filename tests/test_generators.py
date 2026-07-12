@@ -83,3 +83,27 @@ def test_card_number_generator(
     result = list(card_number_generator(start, stop))
 
     assert result == expected
+
+
+def test_filter_by_currency_empty_result() -> None:
+    """Проверяет отсутствие операций с указанной валютой."""
+    transactions = [
+        {
+            "operationAmount": {
+                "currency": {
+                    "code": "RUB",
+                },
+            },
+        }
+    ]
+
+    result = list(filter_by_currency(transactions, "USD"))
+
+    assert result == []
+
+
+def test_transaction_descriptions_empty() -> None:
+    """Проверяет работу генератора с пустым списком."""
+    result = list(transaction_descriptions([]))
+
+    assert result == []
