@@ -33,3 +33,56 @@ usd_transactions = filter_by_currency(transactions, "USD")
 
 for transaction in usd_transactions:
     print(transaction)
+```
+
+### Получение описаний операций
+
+Функция `transaction_descriptions` возвращает описание каждой операции по очереди.
+
+```python
+descriptions = transaction_descriptions(transactions)
+
+for _ in range(5):
+    print(next(descriptions))
+```
+
+### Генерация номеров банковских карт
+
+Функция `card_number_generator` создает номера карт в заданном диапазоне в формате:
+
+`XXXX XXXX XXXX XXXX`
+
+Пример:
+
+```python
+for card_number in card_number_generator(1, 5):
+    print(card_number)
+```
+
+Результат:
+
+```
+0000 0000 0000 0001
+0000 0000 0000 0002
+0000 0000 0000 0003
+0000 0000 0000 0004
+0000 0000 0000 0005
+```
+
+## Тестирование
+
+Для проверки работы проекта используются тесты `pytest`.
+
+Запуск тестов:
+
+```bash
+pytest
+```
+
+Проверка покрытия:
+
+```bash
+pytest --cov=src --cov-report=html
+```
+
+Проект содержит тесты для функций генераторов и других модулей.
