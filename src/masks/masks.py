@@ -1,7 +1,6 @@
 import logging
 from typing import Union
 
-
 logger = logging.getLogger(__name__)
 
 logger.setLevel(logging.DEBUG)
