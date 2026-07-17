@@ -1,8 +1,7 @@
 import json
 from pathlib import Path
 
-
-def read_json(file_path: str) -> list[dict]:
+def read_json_file(file_path: str) -> list[dict]:
     """Читает JSON-файл и возвращает список словарей с данными."""
 
     try:
